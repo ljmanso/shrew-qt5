@@ -100,7 +100,7 @@ bool bdata_2_cert( X509 ** x509, BDATA & cert )
 	return true;
 }
 
-bool prvkey_rsa_2_bdata( BDATA & prvkey, RSA * rsa )
+bool prvkey_rsa_2_bdata( BDATA & prvkey, const RSA * rsa )
 {
 	int size = i2d_RSAPrivateKey( rsa, NULL );
 	prvkey.size( size );
@@ -123,7 +123,7 @@ bool bdata_2_prvkey_rsa( RSA ** rsa, BDATA & prvkey )
 	return true;
 }
 
-bool pubkey_rsa_2_bdata( BDATA & pubkey, RSA * rsa )
+bool pubkey_rsa_2_bdata( BDATA & pubkey, const RSA * rsa )
 {
 	int size = i2d_RSAPublicKey( rsa, NULL );
 	pubkey.size( size );
